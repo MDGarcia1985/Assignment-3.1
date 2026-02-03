@@ -1,0 +1,16 @@
+C:\Users\micha\OneDrive\Documents\UAT Assignments\Gen Ed\AI\Assignment 3.1>python scratch_env_test.py
+Start: (0, 0)
+After forward: (0, 0) -1.0 False
+After right: (0, 1) -1.0 False
+After right: (0, 2) -1.0 False
+After backward: (1, 2) -1.0 False
+
+C:\Users\micha\OneDrive\Documents\UAT Assignments\Gen Ed\AI\Assignment 3.1>python scratch_env_test.py
+Start: (0, 0)
+After forward: (0, 0) -1.0 False
+After right: (0, 1) -1.0 False
+After right: (0, 2) -1.0 False
+After backward: (1, 2) -1.0 False
+After backward: (2, 2) 0.0 True
+After backward: (2, 2) 0.0 True
+After right to goal: (2, 2) 0.0 True
