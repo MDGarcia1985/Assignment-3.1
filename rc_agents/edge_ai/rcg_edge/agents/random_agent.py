@@ -12,14 +12,19 @@ michael@mandedesign.studio
 CSC370 Spring 2026
 """
 
+# The random agent is used as a baseline.
+# It shows how the system behaves with no learning or memory.
+# This makes it possible to see whether learning actually improves outcomes.
+
+
 from __future__ import annotations
  
 import numpy as np  # numpy is a standard scientific baseline for ML
 from typing import Any
 
-from .base import Action, StepResult
+from .base import Action, StepResult #imports shared actino space and results container from the base agent
 
-ACTION_VALUES = [a.value for a in Action]
+ACTION_VALUES = [a.value for a in Action] #a is shorthand for action
 
 #creat a class of random agent
 class RandomAgent:

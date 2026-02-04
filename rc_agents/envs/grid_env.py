@@ -11,10 +11,10 @@ michael@mandedesign.studio
 CSC370 Spring 2026
 
 Actions: 
-    1 = FORWARD (up)
-    2 = BACKWARD (down)
-    3 = RIGHT
-    4 = LEFT
+    0 = FORWARD (up)
+    1 = BACKWARD (down)
+    2 = RIGHT
+    3 = LEFT
 """
 
 # Naming convetion note:
@@ -33,10 +33,10 @@ import random # randomly determined sample from a probability distribution
 # Use built-in min/max instead of numpy for simple clipping
 # This removes the numpy dependency for this basic grid environment
 
-ACTION_FORWARD = 1
-ACTION_BACKWARD = 2
-ACTION_RIGHT = 3
-ACTION_LEFT = 4
+ACTION_FORWARD = 0
+ACTION_BACKWARD = 1
+ACTION_RIGHT = 2
+ACTION_LEFT = 3
 
 #valid_actions tells the runner what actions it can accept
 VALID_ACTIONS = (
@@ -92,6 +92,19 @@ class GridEnv: #defines env object
 
         # compute reward
         reward = -1.0 # default reward is -1 for each move
+        # The negative starting reward creates a penalty for taking longer paths.
+        # Each step costs -1.0, so unnecessary movement is discouraged.
+        #
+        # Reaching the goal gives a reward of 0.0.
+        # This does not add points — it simply stops the penalty.
+        #
+        # As a result, the agent learns to minimize total negative reward,
+        # which is equivalent to finding the shortest valid path.
+        #
+        # Example:
+        # Start (0,0) -> (1,0) -> (2,0) -> (3,0) -> Goal
+        # rewards: -1 + -1 + -1 + -1 + 0 = -4.0 total
+        
         done = False # default state is not done
 
         # check for goal
