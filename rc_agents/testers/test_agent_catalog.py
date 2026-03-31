@@ -1,12 +1,19 @@
 """
 test_agent_catalog.py
 
-Smoke tests for agent_catalog.
+Agent Catalog Tests
+Smoke tests for the agent catalog registry and basic agent construction paths.
 
 Design intent:
 - Catalog must build without importing Streamlit.
 - Agent specs must be well-formed.
 - Agents should be instantiable (skip if an agent is not available yet).
+
+Copyright (c) 2026 Michael Garcia, M&E Design
+https://mandedesign.studio
+michael@mandedesign.studio
+
+CSC370 Spring 2026
 """
 
 from __future__ import annotations
